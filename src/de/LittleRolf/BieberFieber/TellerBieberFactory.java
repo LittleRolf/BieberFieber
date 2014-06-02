@@ -74,6 +74,7 @@ public class TellerBieberFactory {
 							: Teller.Size.BIG));
 				}
 			}
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (ParserConfigurationException e) {
@@ -87,17 +88,25 @@ public class TellerBieberFactory {
 
 	public Queue<Bieber> getBieberz() {
 		Queue<Bieber> q = new LinkedList<Bieber>();
-		q.add(new Bieber("Ulf", Bieber.Size.BIG));
-		q.add(new Bieber("Klein-Peda", Bieber.Size.SMALL));
+		for (Bieber b : bieberz) {
+			q.add(b);
+		}
+		// q.add(new Bieber("Ulf", Bieber.Size.BIG));
+		// q.add(new Bieber("Klein-Peda", Bieber.Size.SMALL));
 		return q;
 	}
 
 	public Stack<Teller> getTellerz() {
 		Stack<Teller> t = new Stack<Teller>();
-
-		t.push(new Teller(Teller.Size.SMALL));
-		t.push(new Teller(Teller.Size.BIG));
+		for (Teller tell : tellerz)
+			t.push(tell);
+		// t.push(new Teller(Teller.Size.SMALL));
+		// t.push(new Teller(Teller.Size.BIG));
 		return t;
+	}
+
+	public static void main(String... args) {
+		TellerBieberFactory f = new TellerBieberFactory("device.xml");
 	}
 
 }
