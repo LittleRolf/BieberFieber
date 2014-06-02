@@ -4,7 +4,9 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class Essensausgabe {
-
+	
+	
+	
 	Stack<Teller> teller;
 	Queue<Bieber> bieber;
 	
@@ -17,13 +19,21 @@ public class Essensausgabe {
 	}
 	
 	public static void main(String... args) {
+		Essensausgabe e = new Essensausgabe();
 		
+		System.out.println(e.tellerstapelPasstZurSchlange());
 	}
 	
 	public boolean tellerstapelPasstZurSchlange() {
 		Bieber b;
 		Teller t;
-		while ()
+		boolean failed = false;
+		while ((b=bieber.poll()) != null) {
+			if (b.size.ordinal() != teller.pop().size.ordinal()) {
+				failed = true;
+			}
+		}
+		return !failed;
 	}
 
 }
