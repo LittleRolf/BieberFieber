@@ -13,7 +13,7 @@ public class Essensausgabe {
 	TellerBieberFactory factory;
 	
 	public Essensausgabe() {
-		factory = new TellerBieberFactory("Ulf");
+		factory = new TellerBieberFactory("device.xml");
 		teller = factory.getTellerz();
 		bieber = factory.getBieberz();
 	}
